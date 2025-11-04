@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <h1>Hello world</h1>
+  <h1><%= title %></h1>
+
+  <% for (let i = 0; i < messages.length; i++) { %>
+    <div class="message__box">
+      <h3 class="message__user">User: <%= messages[i].user %></h3>
+      <p class="message__text">Message: <%= messages[i].text %></p>
+      <p class="message__date">Added: <%= messages[i].added %></p>
+    </div>
+  <% } %>
+
+  <a href="/new">Add a new message</a>
 </body>
 </html>
